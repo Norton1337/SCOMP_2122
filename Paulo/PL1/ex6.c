@@ -29,15 +29,10 @@ int main()
 } 
 
 /*
+ * a) 16 total processes so 15 created (not counting parent), 2^4
  * 
  * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ * b) add an "exit()" after the child sleeps so no child will create more children
  * 
  * 
  */
