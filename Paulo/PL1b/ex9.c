@@ -6,11 +6,11 @@
 #include <wait.h>
 #include <time.h>
 
-volatile sig_atomic_t test=0;
+volatile sig_atomic_t canProceed=0;
 
 void handle_signal(int signo, siginfo_t *sinfo, void *context)
 {
-	test++;
+	canProceed=1;
 }
 
 
@@ -38,7 +38,7 @@ int main() {
 		}
 		
 		
-		while(test==0){}
+		while(canProceed==0){}
 		printf("Task C!\n");
 		exit(0);
 		
