@@ -58,3 +58,8 @@ int main(void){
 	
 	close(fd[0]);
 }
+
+/* there is no need for synchronization because the parent will read
+ * 5 values and their order doesn't matter.
+ * 
+ */

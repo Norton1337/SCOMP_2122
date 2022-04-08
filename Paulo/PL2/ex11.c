@@ -50,7 +50,7 @@ int main(void){
 	for(int i=0;i<5;i++){
 		
 		if(fork()==0){
-			srand(time(NULL)+i+1);
+			srand((int)time(NULL) % getpid()); 
 			int randomNum = 1 + (rand() % 500);
 			printf("child[%d] randomNum: %d\n",i,randomNum);
 			int parentRandomNum;
@@ -101,7 +101,7 @@ int main(void){
 	// Parent
 	close(fd[0]);
 	close(fd6[1]);
-	srand(time(NULL));
+	srand((int)time(NULL) % getpid()); 
 	int randomNum = 1 + (rand() % 500);
 	printf("parent randomNum: %d\n",randomNum);
 	write(fd[1],&randomNum,sizeof(int));

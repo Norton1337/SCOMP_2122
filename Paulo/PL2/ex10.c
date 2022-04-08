@@ -37,7 +37,7 @@ int main(void){
 			status=0;
 			read(fd[0],&status,sizeof(int));
 			if(status==1){
-				srand(time(NULL));
+				srand((int)time(NULL) % getpid()); 
 				int randomNumChild = 1 + (rand() % 5);
 				
 				write(fd2[1],&randomNumChild,sizeof(int));
