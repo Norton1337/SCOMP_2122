@@ -20,8 +20,13 @@ int main(){
 	act.sa_flags = SA_SIGINFO;
 	
 	sigaction(SIGINT, &act, NULL);
-	scanf("%d",&a);
-	printf("aaa");
+	
+	
+	for(int f=0;f<200;f=f+1){
+	printf("%d\n",f);
+	sleep(1);
+	}
+
 	
 	return 0;
 	}
