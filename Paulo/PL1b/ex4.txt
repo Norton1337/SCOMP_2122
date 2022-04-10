@@ -1,0 +1,33 @@
+Signal			Number			Action
+
+SIGHUP			1			Terminate
+SIGINT			2			Terminate
+SIGQUIT			3			Core Dump
+SIGILL			4			Core Dump
+SIGTRAP			5			Core Dump
+SIGABRT			6			Core Dump
+SIGBUS			7			Core Dump
+SIGFPE			8			Core Dump
+SIGKILL			9			Terminate
+SIGUSR1			10			Terminate
+SIGSEGV			11			Core Dump
+SIGUSR2			12			Terminate
+SIGPIPE			13			Terminate
+SIGALRM			14			Terminate
+SIGTERM			15			Terminate
+SIGSTKFLT		16			Terminate
+SIGCHLD			17			Ignore
+SIGCONT			18			Continute
+SIGSTOP			19			Stop
+SIGTSTP			20			Stop
+SIGTTIN 		21			Stop
+SIGTTOU 		22			Stop
+SIGURG 			23			Ignore
+SIGXCPU			24			Core Dump
+SIGXFSZ			25			Core Dump		
+SIGVTALRM		26			Terminate
+SIGPROF			27			Terminate
+SIGWINCH		28			Ignore
+SIGIO			29			Terminate
+SIGPWR			30			Terminate
+SIGSYS			31			Core Dump

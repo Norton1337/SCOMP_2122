@@ -13,7 +13,7 @@ int main()
 		if(fork()==0){
 			
 			for(int k=i*100+1;k<i*100+101;k++)
-			{
+			{q
 				printf("%d\n",k);
 			}
 			exit(1);

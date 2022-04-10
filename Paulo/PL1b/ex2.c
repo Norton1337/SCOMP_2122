@@ -11,7 +11,7 @@ int main() {
 /*
  * SIGSTOP - stop process 
  * SIGCONT - continue process
- * SIGKILL - kill process
+ * SIGKILL - kill process(end process)
  * 
  * 
  * 

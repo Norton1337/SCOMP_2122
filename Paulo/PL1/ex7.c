@@ -10,7 +10,7 @@ int main ()
 {
 	int numbers[ARRAY_SIZE]; /* array to lookup */
 	int n; /* the number to find */
-	int status=0;
+	int status;
 	time_t t; /* needed to init. the random number generator (RNG)	*/
 	int i;
 	/* intializes RNG (srand():stdlib.h; time(): time.h) */
