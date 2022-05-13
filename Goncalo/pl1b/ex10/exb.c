@@ -5,22 +5,28 @@
 #include <unistd.h>
 #include <string.h>
 
-int c=0;
+static int c=0;
 
-volatile sig_atomic_t cont=0;
+void handle_signal(){
+	c=1;
+	}
 
 
 
 int main(){
 	pid_t p;
-	if (p=fork()==0){
-		
+	p=fork();
+	if (p==0){
+		signal(SIGUSR1,handle_signal);
 		sleep(10);
+		if (!c){
+			write(STDOUT_FILENO,"To slow, that is why the program will end!",42);
+			kill(getppid(),SIGKILL);
+			
+			}
 		
-		write(STDOUT_FILENO,"To slow, that is why the program will end!",42);
-		kill(getppid(),SIGKILL);
 
-		exit(1);
+		exit(0);
 		
 		}
 	
@@ -31,10 +37,11 @@ int main(){
 	char a[100];
 	//alarm(10);
 	gets(a);
-	kill(p,SIGKILL);
+	//printf("%d",p);
+	kill(p,SIGUSR1);
 	//alarm(0);
+	write(STDOUT_FILENO,"cont!",5);
 
-	printf("%d\n",strlen(a));
 	sleep(20);
 	printf("Successful execution!");
 	
