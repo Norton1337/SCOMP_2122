@@ -1,0 +1,36 @@
+Produtor:
+ - Criar vetores com 100 inteiros de 1 em 1 segundo
+
+ - Enviar vetores através de um pipe para processo A1
+
+
+A1:
+ - Arrancar com os mecanismos (sincronização e partilha de dados)
+
+ - Simular tempo de execução aleatorio (0 a 2)
+
+ - Somar +1 a todos os elementos do vetor
+
+ - Passar dados por memória partilhada para A2.
+
+
+A2:
+ - Esperar pelos dados do processo A1.
+
+ - Arrancar com os mecanismos (sincronização e partilha de dados)
+
+ - Simular tempo de execução aleatorio (1 a 3 segundos)
+
+ - Somar +10 a todos os elementos do vetor
+
+
+A3:
+ - Esperar pelos dados do processo A2.
+
+ - Arrancar com os mecanismos (sincronização e partilha de dados)
+
+ - Simular tempo de execução aleatorio (1 a 3 segundos)
+
+ - Somar +100 a todos os elementos do vetor
+
+ - Imprimir resultado final
