@@ -1,0 +1,20 @@
+criar 2 espaços de memoria partilha
+
+criar 3 semaforos para fazer sincronizaçao dos processos (assim garantimos a sua ordem)
+
+criar 1 pipe para comunicaçao entre processo A3 e impressor
+
+o processo impressor (pai) cria os varios processos A1 A2 A3
+
+o processo A1 inicia as suas tarefas enquanto o outros processos A2 A3 estao bloqueados devido ao semaforo
+
+
+
+
+A1 inicia populando o vetor com numeros random, faz espera e depois envia o vetor para a memoria partilhada que vai ser lida pelo processo A2
+
+A2 le e guarda a memoria partilhada,faz o tratamento dos dados(soma) e depois envia para a 2ª memoria partilhada que vai ser lida pelo processo A3
+
+A3 faz tratamento dos dados e depois envia atravez de um pipe para o processo impressor
+
+//creio que houve varios erros de interpretação da minha parte
