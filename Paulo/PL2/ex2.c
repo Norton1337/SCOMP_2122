@@ -3,6 +3,10 @@
 #include <unistd.h>
 #include <string.h>
 
+#define N1 1
+#define N2 1
+#define N3 1
+
 typedef struct {
 	int newInt;
 	char newString[256];
@@ -17,7 +21,7 @@ int main(void){
 		perror("Pipe failed");
 		return 1;
 	}
-	pid = fork();
+	pid_t pid = fork();
 	if(pid > 0){
 		// Parent:
 		close(fd[0]);
