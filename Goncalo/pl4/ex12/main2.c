@@ -29,11 +29,11 @@ int main(){
 	ftruncate (fd, sizeof(shared_data_type)+5);
 	addr = mmap(NULL, sizeof(shared_data_type)+5,PROT_READ|PROT_WRITE,MAP_SHARED, fd, 0);
 	
-	if ((sem[0] =sem_open("/sem", O_CREAT, 0644,1)) == SEM_FAILED) {
+	if ((sem[0] =sem_open("/sem", 0)) == SEM_FAILED) {
 			perror("1Error in sem_open()");
 			exit(0);
 		}
-	if ((sem[2] =sem_open("/sem2", O_CREAT, 0644,1)) == SEM_FAILED) {
+	if ((sem[2] =sem_open("/sem2", 0)) == SEM_FAILED) {
 			perror("2Error in sem_open() 1");
 			exit(0);
 		}	
@@ -58,11 +58,14 @@ int main(){
 	fflush(stdout);
 	
 
+		
 	
 	
-	//sem_unlink("sem");
 	
-	//sem_unlink("sem2");
+	sem_close(sem[2]);
+	
+	sem_close(sem[0]);
+	
 	
 	
 	

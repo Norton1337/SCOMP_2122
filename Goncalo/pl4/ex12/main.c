@@ -68,6 +68,8 @@ int main(){
 		fflush(stdout);
 		addr->ticket=tickets;
 		tickets=tickets-1;
+		
+		
 		sem_post(sem[0]);
 		
 		
